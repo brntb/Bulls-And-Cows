@@ -1,5 +1,5 @@
 # HyperSkill-Bulls-And-Cows
-# Stage 1/7
+# Stage 2/7
 # Description
 
 Let's add some interactivity to our program. The program should create a 4-digit secret code, and the player should try to guess it on the first try. The program should give a grade to evaluate how accurate the player was.
