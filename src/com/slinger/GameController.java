@@ -22,7 +22,9 @@ public class GameController {
         }
 
         //generate code for game to use and print start message
-        String code = generator.generateCode(codeLength);
+        //code for stage 4;
+        // String code = generator.generateCode(codeLength);
+        String code = generator.generateCodeWithJava(codeLength);
         view.startGameMessage();
 
         //start guessing

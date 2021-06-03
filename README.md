@@ -1,33 +1,27 @@
 # HyperSkill-Bulls-And-Cows
-# Stage 4/7
+# Stage 5/7
 # Description
 
-In this stage, you should combine all the previous parts into a simple playable version of the "Bulls and Cows" game. First, prompt the player to input the length of the secret code. The length will determine the difficulty level for the current game session. The program should generate a secret code of the given length. Remember that it should consist of unique numbers.
+The algorithm suggested for generating the secret code in the previous stage was really a “reinvention of the wheel”. Java already has the tools for generating random numbers! Research some common pseudo-random generation methods such as Math.random() and other methods from the Random class. Choose the method you like and use it to rewrite the secret code generation.
 
-Then, the game starts and the program prompts the player to guess the code. When the player inputs a number, the program should grade it in bulls and cows. The game goes on until the code is guessed, that is, until the number of bulls is equal to the number of digits in the code. When the game ends, the program should finish its execution.
-Objectives
+Nothing else is supposed to change at this stage: the program asks for the length, generates a secret code, and then receives and grades the attempts until the code is guessed. Your task here is to rewrite the code generator without breaking the existing code.
+Objective
 
-In this stage, your program should:
-
-    Ask for the length of the secret code and then generate the code.
-    Wait for the user input.
-    Grade the guessing attempt in bulls and cows.
-    If the secret code has been guessed, the program stops; otherwise, return to the second step.
-
+In this stage, rewrite the secret code generator using a suitable Java method.
 Example
 
 The greater-than symbol followed by a space > represents the user input. Note that it's not part of the input.
 
 Please, enter the secret code's length:
-> 4
-Okay, let's start a game!
-Turn 1:
-> 1234
-Grade: 1 bull and 1 cow
-Turn 2:
-> 7354
-Grade: 2 bulls and 1 cow
-Turn 3:
-> 9374
-Grade: 4 bulls
+> 4 <br>
+Okay, let's start a game! <br>
+Turn 1: <br>
+> 1234 <br>
+Grade: 1 bull and 1 cow <br>
+Turn 2: <br>
+> 7354 <br>
+Grade: 2 bulls and 1 cow <br>
+Turn 3: <br>
+> 9374 <br>
+Grade: 4 bulls <br>
 Congratulations! You guessed the secret code.
