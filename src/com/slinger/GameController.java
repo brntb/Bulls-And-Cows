@@ -16,16 +16,16 @@ public class GameController {
         //get code length before guessing starts
         int codeLength = view.getCodeLength();
 
-        if (codeLength > 10) {
+        //get how may symbols user wants
+        int symbolCount = view.getHowManySymbols();
+
+        if (symbolCount < codeLength) {
             view.printInvalidLength(codeLength);
             return;
         }
 
-        //generate code for game to use and print start message
-        //code for stage 4;
-        // String code = generator.generateCode(codeLength);
-        String code = generator.generateCodeWithJava(codeLength);
-        view.startGameMessage();
+        String code = generator.generateCodeWithNumbersAndLetters(codeLength, symbolCount);
+        view.startGameMessage(code, symbolCount);
 
         //start guessing
         while (isGuessing) {

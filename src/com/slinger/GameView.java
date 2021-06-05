@@ -15,7 +15,32 @@ public class GameView {
         return Integer.parseInt(scanner.nextLine());
     }
 
-    public void startGameMessage() {
+    public int getHowManySymbols() {
+        System.out.println("Input the number of possible symbols in the code:");
+        return Integer.parseInt(scanner.nextLine());
+    }
+
+    public void startGameMessage(String code, int symbolCount) {
+        String encrypted = code.replaceAll("[0-9a-z]", "*");
+        StringBuilder possibleSymbols = new StringBuilder();
+
+        possibleSymbols.append("(");
+        //append possible numbers and letters
+        if (symbolCount < 10) {
+            possibleSymbols.append("0-").append(symbolCount);
+        } else if (symbolCount == 10){
+            possibleSymbols.append("0-9, ").append("a");
+        } else {
+            possibleSymbols.append("0-9, ").append("a-");
+
+            //using 97 from ascii table to start at a
+            int lastLetterNumber = 97 + symbolCount - 11;
+            char lastNumber = (char) lastLetterNumber;
+            possibleSymbols.append(lastNumber);
+        }
+        possibleSymbols.append(").");
+
+        System.out.println("The secret is prepared: " + encrypted + " " + possibleSymbols);
         System.out.println("Okay, let's start a game!");
     }
 
