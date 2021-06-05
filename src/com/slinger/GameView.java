@@ -10,14 +10,14 @@ public class GameView {
         this.scanner = scanner;
     }
 
-    public int getCodeLength() {
+    public String getCodeLength() {
         System.out.println("Please, enter the secret code's length:");
-        return Integer.parseInt(scanner.nextLine());
+        return scanner.nextLine();
     }
 
-    public int getHowManySymbols() {
+    public String getHowManySymbols() {
         System.out.println("Input the number of possible symbols in the code:");
-        return Integer.parseInt(scanner.nextLine());
+        return scanner.nextLine();
     }
 
     public void startGameMessage(String code, int symbolCount) {
@@ -27,7 +27,7 @@ public class GameView {
         possibleSymbols.append("(");
         //append possible numbers and letters
         if (symbolCount < 10) {
-            possibleSymbols.append("0-").append(symbolCount);
+            possibleSymbols.append("0-10");
         } else if (symbolCount == 10){
             possibleSymbols.append("0-9, ").append("a");
         } else {
@@ -74,8 +74,18 @@ public class GameView {
         System.out.println(grade);
     }
 
-    public void printInvalidLength(int length) {
-        System.out.println("Error: can't generate a secret number with a length of " + length + " because there aren't enough unique digits.");
+    //prints if symbol length is less than code length
+    public void symbolLengthError(int codeLength, int symbolLength) {
+        System.out.println("Error: it's not possible to generate a code with a length of " + codeLength + " with " + symbolLength + " unique symbols.");
+    }
+
+    //prints if symbol length is greater than 36
+    public void tooManySymbolsError() {
+        System.out.println("Error: maximum number of possible symbols in the code is 36 (0-9, a-z).");
+    }
+
+    public void notIntegerError(String input) {
+        System.out.println("Error: \"" + input + "\" isn't a valid number.");
     }
 
 }
